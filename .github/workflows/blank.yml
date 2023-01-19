@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build:-dev
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -22,8 +22,17 @@ jobs:
     name: Deploy Dev
     runs-on: ubuntu-lastest
     environment: env-dev
-    needs: [build]
+    needs: [build-dev]
     steps:
       - name: Teste
         run: echo Deploy Dev
-        
+  deploy-qa:
+    name: Deploy QA
+    runs-on: ubuntu-lastest
+    environment: env-qa
+    needs: [deploy-dev]
+    steps:
+      - name: Teste QA
+        run: echo Deploy QA
+
+
