@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
@@ -17,3 +18,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  deploy-dev:
+    name: Deploy Dev
+    runs-on: ubuntu-lastest
+    environment: env-dev
+    steps:
+      - name: Teste
+        run: echo Deploy Dev
+        
