@@ -22,6 +22,7 @@ jobs:
     name: Deploy Dev
     runs-on: ubuntu-lastest
     environment: env-dev
+    needs: [build]
     steps:
       - name: Teste
         run: echo Deploy Dev
