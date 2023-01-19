@@ -30,7 +30,8 @@ jobs:
         name: Teste
         run: echo Deploy Dev
       - id: dds2
-        name: echo Deploy Dev 2
+        name: Teste 2
+        run: echo Deploy Dev 2
   deploy-qa:
     name: Deploy QA
     runs-on: ubuntu-lastest
