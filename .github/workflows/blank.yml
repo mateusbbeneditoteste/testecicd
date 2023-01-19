@@ -12,9 +12,11 @@ jobs:
     name: Build Dev
     runs-on: ubuntu-latest
     steps:
-      - name: Run a one-line script
+      - id: bds1
+        name: Run a one-line script
         run: echo Hello, world!
-      - name: Run a multi-line script
+      - id: bds2
+        name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
@@ -24,8 +26,11 @@ jobs:
     environment: env-dev
     needs: [build-dev]
     steps:
-      - name: Teste
+      - id: dds1
+        name: Teste
         run: echo Deploy Dev
+      - id: dds2
+        name: echo Deploy Dev 2
   deploy-qa:
     name: Deploy QA
     runs-on: ubuntu-lastest
