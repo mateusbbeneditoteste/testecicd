@@ -38,7 +38,7 @@ jobs:
     name: Work Dev
     runs-on: ubuntu-lastest
     needs: deploy-dev
-    if: contains(needs.deploy-dev.outputs.status, failure())
+    if: contains(needs.deploy-dev.outputs.status, cancelled())
     steps:
       - run: echo Erro Work Dev
   deploy-qa:
